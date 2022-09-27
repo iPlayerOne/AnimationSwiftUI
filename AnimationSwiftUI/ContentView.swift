@@ -9,24 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var wingsAngle = 50.0
-    var isFlewAway = false
+    @State var isFlewAway = false
     
     var body: some View {
-        ZStack() {
+        VStack {
+            Spacer()
+            ZStack {
+                
                 TriangleView(
-                    angle: -300,
+                    angle: isFlewAway ? -310 : -290,
                     color: .yellow
                 )
                 .frame(width: 125, height: 125)
                 .offset(x: -110, y: 0)
-            
+                
                 SemiCircleView(
-                    angle: wingsAngle,
+                    angle: isFlewAway ? -20 : 50,
                     color: .blue
                 )
-                .frame(width: 150, height: 150)
+                .frame(width: 120, height: 120)
                 .offset(x: 0, y: -90)
+                
                 
                 TriangleView(
                     angle: 0,
@@ -40,6 +43,7 @@ struct ContentView: View {
                 )
                 .frame(width: 50, height: 50)
                 .offset(x: 0,y: 40)
+                
                 SemiCircleView(
                     angle: -30,
                     color: .init(.systemGray)
@@ -48,29 +52,61 @@ struct ContentView: View {
                 .offset(x: -40, y: -75)
                 
                 SemiCircleView(
-                    angle: wingsAngle,
+                    angle: isFlewAway ? -20 : 50,
                     color: .cyan
                 )
-                .animation(Animation.easeInOut(duration: 1.0), value: 1)
                 .frame(width: 140, height: 140)
                 .offset(x: -20,y: -90)
-            
-            TriangleView(
-                angle: 100,
-                color: .red
+                
+                TriangleView(
+                    angle: 100,
+                    color: .red
+                )
+                .frame(width: 50, height: 50)
+                .offset(x: 130,y: -120)
+                
+                CircleView()
+                    .frame(width: 100, height: 100)
+                    .offset(x: 70,y: -130)
+                
+            }
+            .animation(
+                isFlewAway ?
+                    .easeInOut(duration: 0.5).repeatForever()
+                : .default, value: isFlewAway
             )
-            .frame(width: 50, height: 50)
-            .offset(x: 130,y: -120)
-
-                Circle()
-                .foregroundColor(.yellow)
-                .frame(width: 100, height: 100)
-                .offset(x: 70,y: -130)
             
-            Circle()
-                .frame(width: 10,height: 10)
-                .offset(x:90,y:-130)
-
+            if !isFlewAway {
+                Image(systemName: "globe")
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .offset(x: -10, y: -30)
+                    .foregroundColor(.accentColor)
+                    .transition(.move(edge: .bottom))
+            } else {
+                Text("2022. Cuckoos flying away")
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
+                    .transition(.move(edge: .leading))
+                
+            }
+            
+            Spacer()
+            
+            Button(
+                isFlewAway ? "Calm Down" : "Fly away")
+            {
+                withAnimation {
+                    isFlewAway.toggle()
+                }
+            }
+            .font(.title)
+            .frame(width: 200, height: 60)
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(20)
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 4))
+            .padding()
         }
         
     }

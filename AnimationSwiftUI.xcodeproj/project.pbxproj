@@ -13,6 +13,7 @@
 		30C0B90828E2133A00CA4873 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C0B90728E2133A00CA4873 /* Preview Assets.xcassets */; };
 		30C0B90F28E2E8D100CA4873 /*  SemiCercle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C0B90E28E2E8D100CA4873 /*  SemiCercle.swift */; };
 		30C0B91128E3053600CA4873 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C0B91028E3053600CA4873 /* TriangleView.swift */; };
+		30C0B91328E3328C00CA4873 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C0B91228E3328C00CA4873 /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		30C0B90728E2133A00CA4873 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		30C0B90E28E2E8D100CA4873 /*  SemiCercle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " SemiCercle.swift"; sourceTree = "<group>"; };
 		30C0B91028E3053600CA4873 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		30C0B91228E3328C00CA4873 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				30C0B90028E2133800CA4873 /* AnimationSwiftUIApp.swift */,
 				30C0B90228E2133800CA4873 /* ContentView.swift */,
+				30C0B91228E3328C00CA4873 /* CircleView.swift */,
 				30C0B90E28E2E8D100CA4873 /*  SemiCercle.swift */,
 				30C0B91028E3053600CA4873 /* TriangleView.swift */,
 				30C0B90428E2133A00CA4873 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30C0B90328E2133800CA4873 /* ContentView.swift in Sources */,
+				30C0B91328E3328C00CA4873 /* CircleView.swift in Sources */,
 				30C0B90F28E2E8D100CA4873 /*  SemiCercle.swift in Sources */,
 				30C0B91128E3053600CA4873 /* TriangleView.swift in Sources */,
 				30C0B90128E2133800CA4873 /* AnimationSwiftUIApp.swift in Sources */,

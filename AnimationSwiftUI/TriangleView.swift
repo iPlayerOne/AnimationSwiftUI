@@ -26,7 +26,6 @@ struct TriangleView: View {
                 path.move(to: CGPoint(x: middle, y: zero))
                 path.addLine(to: CGPoint(x: farLine, y: farLine))
                 path.addLine(to: CGPoint(x: nearLine, y: farLine))
-//                path.addLine(to: CGPoint(x: middle, y: middle))
             }
             .fill(color)
             .rotationEffect(
