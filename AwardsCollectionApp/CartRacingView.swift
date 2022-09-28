@@ -23,7 +23,7 @@ struct CartRacingView: View {
                     start: $start,
                     cartTitle: "EaseOut",
                     color: .green,
-                    animation: .easeOut(duration: 0.7)
+                    animation: .easeOut(duration: 0.6)
                 )
                 CartView(
                     start: $start,
